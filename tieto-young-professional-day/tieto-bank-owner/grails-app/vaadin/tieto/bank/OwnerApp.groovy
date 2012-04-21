@@ -12,7 +12,8 @@ import com.vaadin.ui.themes.Runo;
 class OwnerApp extends Application {
 
     Label lblUserBalance = new Label()
-    
+	Table tableAc = new Table()
+	AccountDataForm form= new AccountDataForm()
     @Override
     public void init() {
         setTheme(Runo.themeName())
@@ -42,7 +43,10 @@ class OwnerApp extends Application {
         
         table.addListener(new ShowBalanceListener(app:this))
         
-        w.addComponent(table)
+		w.addComponent(table)
+		tableAc.setSelectable(true)
+        w.addComponent(tableAc)
+        w.addComponent(form)
         
         setMainWindow(w)
     }

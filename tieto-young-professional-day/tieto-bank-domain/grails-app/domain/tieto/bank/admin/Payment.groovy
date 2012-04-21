@@ -11,10 +11,11 @@ class Payment {
 		amount min: 1
 		from nullable:true
 		to nullable:true
+		date nullable:true
 
 	}
 	def beforeInsert() {
-		date new Date()
+		date = new Date()
 	}
 }
 
